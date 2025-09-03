@@ -1,8 +1,15 @@
 import React from "react";
 import './Footer.css';
-
+const packageJson = require('../package.json');
 
 const Footer = () =>{
+    const currentYear = new Date().getFullYear(); 
+    let versionToDisplay = "unknown";
+    try {
+        versionToDisplay = packageJson.version; // Assuming VERSION is globally defined, e.g., through a bundler
+    } catch (error) {
+        console.log("Cannot get version of application.");
+    }
     return(
         <div>
         <footer id="support" className="footer-px-5">
@@ -31,16 +38,16 @@ const Footer = () =>{
                     <div className="text-left align-center">
                         <ul className="footer-social-link">
                             <li className="facebook">
-                                <a href="https://www.facebook.com/profile.php?id=61555659393005" aria-label="Facebook" target="_blank"><i className="fa fa-facebook"></i></a>
+                                <a href="https://www.facebook.com/profile.php?id=61555659393005" aria-label="Facebook"><i className="fa fa-facebook"></i></a>
                             </li>
                             <li className="twitter">
-                                <a href="https://twitter.com/payuguru" aria-label="Twitter" target="_blank"><i className="fa fa-twitter"></i></a>
+                                <a href="https://twitter.com/payuguru" aria-label="Twitter"><i className="fa fa-twitter"></i></a>
                             </li>
                             <li className="instagram">
-                                <a href="https://www.instagram.com/pay_u_guru/?hl=en" aria-label="Instagram" target="_blank"><i className="fa fa-instagram"></i></a>
+                                <a href="https://www.instagram.com/pay_u_guru/?hl=en" aria-label="Instagram"><i className="fa fa-instagram"></i></a>
                             </li>
                             <li className="linkedin">
-                                <a href="https://www.linkedin.com/company/99346088/admin/feed/posts/" aria-label="Linkedin" target="_blank"><i className="fa fa-linkedin"></i></a>
+                                <a href="https://www.linkedin.com/company/99346088/admin/feed/posts/" aria-label="Linkedin"><i className="fa fa-linkedin"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -66,19 +73,19 @@ const Footer = () =>{
                     <h4 className="footer-heading">Company</h4>
                     <ul className="footer-list">
                         <li>
-                            <a href="/AmlPolicy" target="_blank">AML Policy</a>
+                            <a href="/AmlPolicy">AML Policy</a>
                         </li>
                         <li>
-                            <a href="/PrivacyPolicy" target="_blank">Privacy Policy</a>
+                            <a href="/PrivacyPolicy">Privacy Policy</a>
                         </li>
                         <li>
-                            <a href="/CookiesPolicy" target="_blank">Cookies Policy</a>
+                            <a href="/CookiesPolicy">Cookies Policy</a>
                         </li>
                         <li>
-                            <a href="/RedressalPolicy" target="_blank">Grievance Redressal Policy</a>
+                            <a href="/RedressalPolicy">Grievance Redressal Policy</a>
                         </li>
                         <li>
-                            <a href="/TermsandCondition" target="_blank">Terms & Conditions</a>
+                            <a href="/TermsandCondition">Terms & Conditions</a>
                         </li>
                     </ul>
                 </div>
@@ -214,7 +221,7 @@ const Footer = () =>{
                 </div>
             </div>
             <div className="footer-copyright d-flex flex-row px-4">
-                <p className="mr-auto footer-left">Copyright @2023.Arena ITech.</p>
+                <p className="mr-auto footer-left">Copyright © {currentYear} .Arena ITech. | {` Version: ${versionToDisplay}`}</p>
                 <p className="ml-auto footer-right"><a href="/cookiespolicy">Cookies Policy</a> | <a href="/redressalpolicy">Grievance Redressal Policy</a></p>
             </div>
         </div>
@@ -226,7 +233,6 @@ const Footer = () =>{
         <i className="fa fa-phone phone-float"></i>
     </a>
             
-        
         </div>
     )
 }

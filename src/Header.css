@@ -3,13 +3,45 @@
   margin-left: 4px;
 
 }
+.customThemeToggle{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --heading-color: #444444;
+  }
+  
+  /* Dark mode styles */
+  [data-theme="dark"] {
+    --bg-color: #333333;
+    --text-color: #ffffff;
+    --heading-color: #dddddd;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  h1 {
+    color: var(--heading-color);
+  }
+
+  .navbar {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
 
 .navbar-expand-lg {
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 3000;
     padding: 5px 100px;
     box-sizing: border-box;
     transition: .5s;
@@ -18,11 +50,16 @@
 .navbar-expand-lg .navbar-brand {
     color: #ee1717;
 }
+
+nav ::after{
+border-color: var(--border-color);
+background-color: var(--bg-slate-900);
+}
 .number {
     display: block;
 }
 .number a {
-    color: #000;
+    color: var(--heading-color);;
     font-weight: 600;
     margin: 0 10px;
     font-size: 15px;
@@ -30,7 +67,7 @@
 .btn-warning {
     border-radius: 40px;
     background-color: #FF5900;
-    color: #000000;
+    color: var(--heading-color);;
     padding: 11px 36px;
     font-size: 18px;
     line-height: 32px;
@@ -50,7 +87,8 @@
     background-image: url("https://i.ibb.co/drvnvhv/bar.png");
 }
 ul li {
-    color: #1E2A39;
+    color: var(--text-color);
+    /* color: #1E2A39; */
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -59,14 +97,14 @@ ul li {
 }
 .navbar-expand-lg .navbar-collapse .navbar-nav li a {
     padding: 15px 25px;
-    color: #343a40;
+    color: var(--text-color);
     font-size: 18px;
     font-weight: 500;
 }
 .btn-warning {
     border-radius: 40px;
     background-color: #FF5900;
-    color: #000000;
+    color: var(--text-color);
     padding: 11px 36px;
     font-size: 18px;
     line-height: 32px;
@@ -96,8 +134,13 @@ ul li {
     .form-inline a {
         margin: 20px 10px 20px 10px;
         font-size: 18px;
-        color: #4a4f55;
+        color: var(--text-color);
         text-decoration: none;
+    }
+    .customThemeToggle{
+        display: flex;
+        justify-content: start;
+        align-items: baseline;
     }
 }
 @media (min-width: 992px){

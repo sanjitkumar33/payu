@@ -3,17 +3,18 @@ ul{
     padding-left: 0!important;
 }
 ul li {
-    color: #1E2A39;
+    color: var(--text-color);
+    /* color: #1E2A39; */
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 35px;
     list-style: none;
 }
-/* a {
+a {
     text-decoration: none !important;
     font-size: 18px;
-} */
+}
 footer {
     background-color: #1e2a39;
     color: #fff;
@@ -42,13 +43,13 @@ footer {
     border-radius: 40px;
     margin: 20px auto;
 }
-/* #email-signup {
+#email-signup {
     font-size: 18px;
     font-weight: 400;
     line-height: 22px;
     letter-spacing: 0em;
     text-align: left;
-} */
+}
 #btn {
     height: 58px;
     width: 135px;
@@ -440,7 +441,7 @@ footer .footer-heading {
         color: #383838;
         outline-style: none;
         border: none;
-        border-radius: 2.2rem;
+        border-radius: 0.2rem;
     }
     #btn {
         height: 58px;
